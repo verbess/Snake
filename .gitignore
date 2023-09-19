@@ -475,3 +475,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+##
+## Custom ignores
+##
+
+# Temporarily ignore *.sln file (this may be removed later)
+*.sln
