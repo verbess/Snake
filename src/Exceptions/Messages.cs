@@ -9,6 +9,6 @@ internal static class Messages
     /// <summary>
     /// Snake framework error.
     /// </summary>
-    internal const string Snake_FrameworkException = @"Snake framework error.";
+    internal const string Snake_Exception = @"Snake framework error.";
     #endregion
 }
