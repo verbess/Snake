@@ -477,6 +477,8 @@ $RECYCLE.BIN/
 *.lnk
 
 ##
-## Custom files
+## Custom ignores
 ##
+
+# Temporarily ignore *.sln file (this may be removed later)
 *.sln
