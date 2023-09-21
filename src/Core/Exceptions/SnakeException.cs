@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 namespace Snake;
 
 /// <summary>
-/// Serves as the base class for snake exceptions namespace.
+/// Serves as the base class for Snake exceptions namespace.
 /// </summary>
 [Serializable]
 public class SnakeException : Exception

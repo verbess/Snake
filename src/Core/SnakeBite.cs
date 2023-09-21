@@ -60,7 +60,7 @@ public static class SnakeBite
     /// <exception cref="ArgumentException"><typeparamref name="T" /> is not an interface type.</exception>
     /// <exception cref="SnakeException">
     /// If the module that implements the specified interface type <typeparamref name="T" /> cannot be found or was not
-    /// a standard snake module.
+    /// a standard Snake module.
     /// </exception>
     public static T Get<T>()
         where T : class
