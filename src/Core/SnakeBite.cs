@@ -56,7 +56,7 @@ public static class SnakeBite
     /// Gets a module that implements the specified interface type <typeparamref name="T" />.
     /// </summary>
     /// <typeparam name="T">The type of the interface implemented by the module to get.</typeparam>
-    /// <returns></returns>
+    /// <returns>A module that implements the specified interface type <typeparamref name="T" />.</returns>
     /// <exception cref="ArgumentException"><typeparamref name="T" /> is not an interface type.</exception>
     /// <exception cref="SnakeException">
     /// If the module that implements the specified interface type <typeparamref name="T" /> cannot be found or was not
