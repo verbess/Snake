@@ -29,9 +29,7 @@ internal sealed class DataModule : Module, IDataModule
     /// When this method returns, contains the data obtained from the <see cref="DataModule" /> that has the specified
     /// key, or the default value of the <typeparamref name="T" /> if the operation failed.
     /// </param>
-    /// <returns>
-    /// <c>true</c> if the key was found in the <see cref="DataModule" />; otherwise, <c>false</c>.
-    /// </returns>
+    /// <returns><c>true</c> if the key was found in the <see cref="DataModule" />; otherwise, <c>false</c>.</returns>
     public bool TryGet<T>(string key, [MaybeNullWhen(false)] out T data)
         where T : class, IKeyed
     {
@@ -50,9 +48,7 @@ internal sealed class DataModule : Module, IDataModule
     /// When this method returns, contains the data obtained from the <see cref="DataModule" /> that has the specified
     /// key, or the default value of the <see cref="IKeyed" /> if the operation failed.
     /// </param>
-    /// <returns>
-    /// <c>true</c> if the key was found in the <see cref="DataModule" />; otherwise, <c>false</c>.
-    /// </returns>
+    /// <returns><c>true</c> if the key was found in the <see cref="DataModule" />; otherwise, <c>false</c>.</returns>
     public bool TryGet(Type dataType, string key, [MaybeNullWhen(false)] out IKeyed data)
     {
         ArgumentNullException.ThrowIfNull(dataType);
