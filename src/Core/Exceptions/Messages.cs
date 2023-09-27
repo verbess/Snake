@@ -10,14 +10,17 @@ internal static class Messages
     /// Snake framework error.
     /// </summary>
     internal const string Snake_Exception = @"Snake framework error.";
+
     /// <summary>
     /// Module '{0}' was not found.
     /// </summary>
     internal const string Snake_ModuleNotFound = @"Module '{0}' was not found.";
+
     /// <summary>
     /// Type '{0}' is not a standard Snake module.
     /// </summary>
     internal const string Snake_NotStandardModule = @"Type '{0}' is not a standard Snake module.";
+
     /// <summary>
     /// Module '{0}' creation failed.
     /// </summary>
