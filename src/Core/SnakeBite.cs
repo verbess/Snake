@@ -13,6 +13,7 @@ public static class SnakeBite
 {
     private const string ModuleNameFormat = @"{0}.{1}";
     private const int InterfaceNameIndex = 1;
+
     private static readonly List<Module> s_modules;
     private static List<IUpdatable> s_updatables;
 
