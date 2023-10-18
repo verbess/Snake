@@ -12,7 +12,6 @@ namespace Snake;
 public static class SnakeBite
 {
     private const string ModuleNameFormat = @"{0}.{1}";
-    private const int InterfaceNameIndex = 1;
 
     private static readonly List<Module> s_modules;
     private static List<IUpdatable> s_updatables;
@@ -72,7 +71,7 @@ public static class SnakeBite
             throw new ArgumentException(Messages.Argument_MustBeInterface);
         }
 
-        string moduleName = Stringify.Format(ModuleNameFormat, type.Namespace, type.Name[InterfaceNameIndex..]);
+        string moduleName = Stringify.Format(ModuleNameFormat, type.Namespace, type.Name[1..]);
         Type moduleType =
             Type.GetType(moduleName)
             ?? throw new SnakeException(Stringify.Format(Messages.Snake_ModuleNotFound, moduleName));
