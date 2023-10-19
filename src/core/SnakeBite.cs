@@ -82,7 +82,7 @@ public static class SnakeBite
 
         Module module = s_modules.FirstOrDefault(m => m.GetType() == moduleType) ?? Add(moduleType);
 
-        return module as T ?? throw new SnakeException();
+        return (module as T)!;
     }
 
     private static Module Add(Type moduleType)
