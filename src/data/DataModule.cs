@@ -30,10 +30,10 @@ internal sealed class DataModule : Module, IDataModule
     /// key, or the default value of the <typeparamref name="T" /> if the operation failed.
     /// </param>
     /// <returns><c>true</c> if the key was found in the <see cref="DataModule" />; otherwise, <c>false</c>.</returns>
-    public bool TryGet<T>(string key, [MaybeNullWhen(false)] out T data)
+    public bool TryGetData<T>(string key, [MaybeNullWhen(false)] out T data)
         where T : class, IKeyed
     {
-        _ = TryGet(typeof(T), key, out IKeyed? temp);
+        _ = TryGetData(typeof(T), key, out IKeyed? temp);
         data = temp as T;
 
         return data is not null;
@@ -49,12 +49,12 @@ internal sealed class DataModule : Module, IDataModule
     /// key, or the default value of the <see cref="IKeyed" /> if the operation failed.
     /// </param>
     /// <returns><c>true</c> if the key was found in the <see cref="DataModule" />; otherwise, <c>false</c>.</returns>
-    public bool TryGet(Type dataType, string key, [MaybeNullWhen(false)] out IKeyed data)
+    public bool TryGetData(Type dataType, string key, [MaybeNullWhen(false)] out IKeyed data)
     {
         ArgumentNullException.ThrowIfNull(dataType);
         ArgumentNullException.ThrowIfNull(key);
 
-        return _pool.TryGet(dataType, key, out data);
+        return _pool.TryGetData(dataType, key, out data);
     }
 
     /// <summary>

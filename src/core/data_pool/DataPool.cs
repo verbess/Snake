@@ -25,7 +25,7 @@ internal sealed class DataPool
     /// key, or the default value of the <see cref="IKeyed" /> if the operation failed.
     /// </param>
     /// <returns><c>true</c> if the key was found in the <see cref="DataPool" />; otherwise, <c>false</c>.</returns>
-    internal bool TryGet(Type dataType, string key, [MaybeNullWhen(false)] out IKeyed data)
+    internal bool TryGetData(Type dataType, string key, [MaybeNullWhen(false)] out IKeyed data)
     {
         ArgumentNullException.ThrowIfNull(dataType);
         ArgumentNullException.ThrowIfNull(key);
@@ -33,7 +33,7 @@ internal sealed class DataPool
         data = default;
         _ = _containers.TryGetValue(dataType, out DataContainer? container);
 
-        return container?.TryGet(key, out data) ?? false;
+        return container?.TryGetData(key, out data) ?? false;
     }
 
     /// <summary>
@@ -124,7 +124,8 @@ internal sealed class DataPool
         /// <returns>
         /// <c>true</c> if the key was found in the <see cref="DataContainer" />; otherwise, <c>false</c>.
         /// </returns>
-        internal bool TryGet(string key, [MaybeNullWhen(false)] out IKeyed data) => _data.TryGetValue(key, out data);
+        internal bool TryGetData(string key, [MaybeNullWhen(false)] out IKeyed data) =>
+            _data.TryGetValue(key, out data);
 
         /// <summary>
         /// Attempts to add the data to the <see cref="DataContainer" />.
