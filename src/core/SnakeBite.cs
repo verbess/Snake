@@ -62,7 +62,7 @@ public static class SnakeBite
     /// If the module that implements the specified interface type <typeparamref name="T" /> cannot be found or was not
     /// a standard Snake module.
     /// </exception>
-    public static T Get<T>()
+    public static T GetModule<T>()
         where T : class
     {
         var type = typeof(T);
