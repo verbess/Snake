@@ -1,7 +1,7 @@
 namespace Snake;
 
 /// <summary>
-/// Provides a basic <see cref="Key" /> property for data querying.
+/// Defines a property for data querying.
 /// </summary>
 public interface IKeyed
 {
