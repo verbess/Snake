@@ -1,7 +1,7 @@
 namespace Snake;
 
 /// <summary>
-/// Represents a base class for modules within the framework.
+/// Represents the base class for modules within the framework.
 /// </summary>
 internal abstract class Module
 {

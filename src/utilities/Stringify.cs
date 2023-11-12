@@ -87,7 +87,7 @@ public static class Stringify
     }
 
     /// <summary>
-    /// Provides methods for formatting string by replacing it with the string representation of specified objects.
+    /// Defines methods for formatting string by replacing it with the string representation of specified objects.
     /// </summary>
     public interface IFormatter
     {

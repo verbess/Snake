@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace Snake.Data;
 
 /// <summary>
-/// Exposes methods to access the <see cref="DataModule" /> that stores and retrieves data objects.
+/// Defines methods to access a data module that stores and retrieves data objects.
 /// </summary>
 public interface IDataModule
 {
@@ -16,7 +16,7 @@ public interface IDataModule
     /// When this method returns, contains the data obtained from the <see cref="IDataModule" /> that has the specified
     /// key, or the default value of the <typeparamref name="T" /> if the operation failed.
     /// </param>
-    /// <returns><c>true</c> if the key was found in the <see cref="DataModule" />; otherwise, <c>false</c>.</returns>
+    /// <returns><c>true</c> if the key was found in the <see cref="IDataModule" />; otherwise, <c>false</c>.</returns>
     public bool TryGetData<T>(string key, [MaybeNullWhen(false)] out T data)
         where T : class, IKeyed;
 
@@ -91,7 +91,7 @@ public interface IDataModule
     public bool TryRemove(Type dataType, string key, [MaybeNullWhen(false)] out IKeyed data);
 
     /// <summary>
-    /// Removes all keys and data from the <see cref="IDataModule" />.
+    /// Clears all keys and data from the <see cref="IDataModule" />.
     /// </summary>
     public void Clear();
 }
