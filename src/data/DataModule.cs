@@ -138,7 +138,7 @@ internal sealed class DataModule : Module, IDataModule
     }
 
     /// <summary>
-    /// Removes all keys and data from the <see cref="DataModule" />.
+    /// Clears all keys and data from the <see cref="DataModule" />.
     /// </summary>
     public void Clear() => _pool.Clear();
 }
