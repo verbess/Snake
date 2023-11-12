@@ -152,7 +152,7 @@ internal sealed class DataPool
         internal bool TryRemove(string key, [MaybeNullWhen(false)] out IKeyed data) => _data.TryRemove(key, out data);
 
         /// <summary>
-        /// Removes all keys and data from the <see cref="DataContainer" />.
+        /// Clears all keys and data from the <see cref="DataContainer" />.
         /// </summary>
         internal void Clear() => _data.Clear();
     }
