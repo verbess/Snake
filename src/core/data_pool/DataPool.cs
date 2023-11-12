@@ -89,7 +89,7 @@ internal sealed class DataPool
     }
 
     /// <summary>
-    /// Removes all keys and data from the <see cref="DataPool" />.
+    /// Clears all keys and data from the <see cref="DataPool" />.
     /// </summary>
     internal void Clear()
     {
