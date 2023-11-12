@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace Snake.Data;
 
 /// <summary>
-/// Exposes methods to access the <see cref="DataModule" /> that stores and retrieves data objects.
+/// Defines methods to access the data module that stores and retrieves data objects.
 /// </summary>
 public interface IDataModule
 {
