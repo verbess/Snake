@@ -1,7 +1,7 @@
 namespace Snake;
 
 /// <summary>
-/// Represents a resource class for exception error message constants.
+/// Serves as the resource class for exception error message constants.
 /// </summary>
 internal static class Messages
 {
