@@ -21,8 +21,8 @@ public static class SnakeBite
     /// </summary>
     static SnakeBite()
     {
-        s_modules = new List<Module>();
-        s_updatables = new List<IUpdatable>();
+        s_modules = [];
+        s_updatables = [];
     }
 
     /// <summary>
