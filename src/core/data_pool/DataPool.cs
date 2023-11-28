@@ -13,7 +13,7 @@ internal sealed class DataPool
     /// <summary>
     /// Initializes a new instance of the <see cref="DataPool" /> class.
     /// </summary>
-    internal DataPool() => _containers = new ConcurrentDictionary<Type, DataContainer>();
+    internal DataPool() => _containers = [];
 
     /// <summary>
     /// Attempts to get the data associated with the specified key from the <see cref="DataPool" />.
@@ -111,7 +111,7 @@ internal sealed class DataPool
         /// <summary>
         /// Initializes a new instance of the <see cref="DataContainer" /> class.
         /// </summary>
-        internal DataContainer() => _data = new ConcurrentDictionary<string, IKeyed>();
+        internal DataContainer() => _data = [];
 
         /// <summary>
         /// Attempts to get the data associated with the specified key from the <see cref="DataContainer" />.
