@@ -1,7 +1,7 @@
 namespace Snake;
 
 /// <summary>
-/// Defines a method that updates a updatable <see cref="Module" />.
+/// Defines a method that updates a updatable module.
 /// </summary>
 internal interface IUpdatable
 {
