@@ -1,12 +1,12 @@
 namespace Snake;
 
 /// <summary>
-/// Represents the base class for modules within the framework.
+/// Represents the base class for all modules in the <see cref="Snake" /> framework.
 /// </summary>
 internal abstract class Module
 {
     /// <summary>
-    /// Defines the default priority value for a module, which is "0".
+    /// Defines the default priority value of a module, which is "0".
     /// </summary>
     internal const int DefaultPriority = 0;
 
