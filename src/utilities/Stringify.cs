@@ -13,9 +13,9 @@ public static class Stringify
     static Stringify() => t_formatter = new ThreadLocal<IFormatter?>();
 
     /// <summary>
-    /// Sets the formatter to be used for string formatting operations.
+    /// Sets the formatter for string formatting operations.
     /// </summary>
-    /// <param name="formatter">The formatter to be used, or null if default behavior is desired.</param>
+    /// <param name="formatter">The formatter to set, or <c>null</c> if default behavior is desired.</param>
     public static void SetFormatter(IFormatter? formatter) => t_formatter.Value = formatter;
 
     /// <summary>
