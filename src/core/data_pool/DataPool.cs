@@ -91,15 +91,7 @@ internal sealed class DataPool
     /// <summary>
     /// Clears all keys and data from the <see cref="DataPool" />.
     /// </summary>
-    internal void Clear()
-    {
-        foreach (DataContainer container in _containers.Values)
-        {
-            container.Clear();
-        }
-
-        _containers.Clear();
-    }
+    internal void Clear() => _containers.Clear();
 
     /// <summary>
     /// Represents a thread-safe container of key/data pairs.
