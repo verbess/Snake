@@ -1,5 +1,3 @@
-using Snake.Utilities;
-
 namespace Snake;
 
 /// <summary>
@@ -26,7 +24,7 @@ public static class SnakeBite
     }
 
     /// <summary>
-    /// Updates the modules with the specified elapsed time.
+    /// Updates the updatable modules with the specified elapsed time.
     /// </summary>
     /// <param name="logicalElapse">The logical elapsed time in seconds.</param>
     /// <param name="realElapse">The real elapsed time in seconds.</param>
@@ -39,7 +37,7 @@ public static class SnakeBite
     }
 
     /// <summary>
-    /// Shuts down the modules and releases any resources held by them.
+    /// Shuts down all modules and releases any resources held by them.
     /// </summary>
     public static void Shutdown()
     {
@@ -53,14 +51,14 @@ public static class SnakeBite
     }
 
     /// <summary>
-    /// Gets a module that implements the specified interface type <typeparamref name="T" />.
+    /// Gets a module that implements the specified interface type.
     /// </summary>
     /// <typeparam name="T">The type of the interface implemented by the module to get.</typeparam>
-    /// <returns>A module that implements the specified interface type <typeparamref name="T" />.</returns>
+    /// <returns>A module that implements the specified interface type.</returns>
     /// <exception cref="ArgumentException"><typeparamref name="T" /> is not an interface type.</exception>
     /// <exception cref="SnakeException">
-    /// If the module that implements the specified interface type <typeparamref name="T" /> cannot be found or was not
-    /// a standard Snake module.
+    /// If the module that implements the specified interface type cannot be found or was not a standard
+    /// <see cref="Snake" /> module.
     /// </exception>
     public static T GetModule<T>()
         where T : class
@@ -71,13 +69,13 @@ public static class SnakeBite
             throw new ArgumentException(Messages.Argument_MustBeInterface);
         }
 
-        string moduleName = Stringify.Format(ModuleNameFormat, type.Namespace, type.Name[1..]);
+        string moduleName = string.Format(ModuleNameFormat, type.Namespace, type.Name[1..]);
         Type moduleType =
             Type.GetType(moduleName)
-            ?? throw new SnakeException(Stringify.Format(Messages.Snake_ModuleNotFound, moduleName));
+            ?? throw new SnakeException(string.Format(Messages.Snake_ModuleNotFound, moduleName));
         if (!moduleType.IsAssignableTo(type) || !moduleType.IsAssignableTo(typeof(Module)))
         {
-            throw new SnakeException(Stringify.Format(Messages.Snake_NotStandardModule, moduleName));
+            throw new SnakeException(string.Format(Messages.Snake_NotStandardModule, moduleName));
         }
 
         Module module = s_modules.FirstOrDefault(m => m.GetType() == moduleType) ?? Add(moduleType);
@@ -89,7 +87,7 @@ public static class SnakeBite
     {
         Module module =
             Activator.CreateInstance(moduleType, true) as Module
-            ?? throw new SnakeException(Stringify.Format(Messages.Snake_ModuleCreationFailed, moduleType.FullName));
+            ?? throw new SnakeException(string.Format(Messages.Snake_ModuleCreationFailed, moduleType.FullName));
 
         s_modules.Add(module);
         s_updatables = s_modules.OrderByDescending(m => m.Priority).OfType<IUpdatable>().ToList();
