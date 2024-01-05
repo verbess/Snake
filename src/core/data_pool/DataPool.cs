@@ -94,11 +94,11 @@ internal sealed class DataPool
     internal void Clear() => _containers.Clear();
 
     /// <summary>
-    /// Represents a thread-safe container of key/data pairs.
+    /// Represents a container of key/data pairs.
     /// </summary>
     private sealed class DataContainer
     {
-        private readonly ConcurrentDictionary<string, IKeyed> _data;
+        private readonly Dictionary<string, IKeyed> _data;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DataContainer" /> class.
@@ -141,11 +141,6 @@ internal sealed class DataPool
         /// <c>true</c> if the data was removed from the <see cref="DataContainer" /> successfully; otherwise,
         /// <c>false</c>.
         /// </returns>
-        internal bool TryRemove(string key, [MaybeNullWhen(false)] out IKeyed data) => _data.TryRemove(key, out data);
-
-        /// <summary>
-        /// Clears all keys and data from the <see cref="DataContainer" />.
-        /// </summary>
-        internal void Clear() => _data.Clear();
+        internal bool TryRemove(string key, [MaybeNullWhen(false)] out IKeyed data) => _data.Remove(key, out data);
     }
 }
