@@ -24,7 +24,7 @@ public static class SnakeBite
     }
 
     /// <summary>
-    /// Updates the updatable modules with the specified elapsed time.
+    /// Updates all updatable modules with the specified elapsed time.
     /// </summary>
     /// <param name="logicalElapse">The logical elapsed time in seconds.</param>
     /// <param name="realElapse">The real elapsed time in seconds.</param>
