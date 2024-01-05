@@ -33,7 +33,7 @@ public interface IDataModule
     public bool TryGetData(Type dataType, string key, [MaybeNullWhen(false)] out IKeyed data);
 
     /// <summary>
-    /// Attempts to add the data to the <see cref="IDataModule" />.
+    /// Attempts to add a data to the <see cref="IDataModule" />.
     /// </summary>
     /// <param name="data">The data to add.</param>
     /// <returns>

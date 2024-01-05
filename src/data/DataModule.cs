@@ -58,7 +58,7 @@ internal sealed class DataModule : Module, IDataModule
     }
 
     /// <summary>
-    /// Attempts to add the data to the <see cref="DataModule" />.
+    /// Attempts to add a data to the <see cref="DataModule" />.
     /// </summary>
     /// <param name="data">The data to add.</param>
     /// <returns>

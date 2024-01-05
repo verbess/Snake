@@ -1,7 +1,7 @@
 namespace Snake;
 
 /// <summary>
-/// Defines a property for data querying.
+/// Defines a method for data querying.
 /// </summary>
 public interface IKeyed
 {
