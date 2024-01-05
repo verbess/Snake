@@ -37,7 +37,7 @@ internal sealed class DataPool
     }
 
     /// <summary>
-    /// Attempts to add the data to the <see cref="DataPool" />.
+    /// Attempts to add a data to the <see cref="DataPool" />.
     /// </summary>
     /// <param name="data">The data to add.</param>
     /// <returns>
@@ -120,7 +120,7 @@ internal sealed class DataPool
             _data.TryGetValue(key, out data);
 
         /// <summary>
-        /// Attempts to add the data to the <see cref="DataContainer" />.
+        /// Attempts to add a data to the <see cref="DataContainer" />.
         /// </summary>
         /// <param name="data">The data to add.</param>
         /// <returns>
