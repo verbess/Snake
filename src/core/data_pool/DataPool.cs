@@ -131,6 +131,6 @@ internal sealed class DataPool
         /// <c>true</c> if the data was removed from the <see cref="DataContainer" /> successfully; otherwise,
         /// <c>false</c>.
         /// </returns>
-        internal bool TryRemove(string key, [MaybeNullWhen(false)] out IKeyed data) => _data.Remove(key, out data);
+        internal bool TryRemove(string key, [MaybeNullWhen(false)] out IKeyed data) => _data.TryRemove(key, out data);
     }
 }
