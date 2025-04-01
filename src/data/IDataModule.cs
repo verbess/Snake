@@ -23,14 +23,14 @@ public interface IDataModule
     /// <summary>
     /// Attempts to get the data associated with the specified key from the <see cref="IDataModule" />.
     /// </summary>
-    /// <param name="dataType">The type of the data to get.</param>
+    /// <param name="type">The type of the data to get.</param>
     /// <param name="key">The key of the data to get.</param>
     /// <param name="data">
     /// When this method returns, contains the data obtained from the <see cref="IDataModule" /> that has the specified
     /// key, or the default value of the <see cref="IKeyed" /> if the operation failed.
     /// </param>
     /// <returns><c>true</c> if the key was found in the <see cref="IDataModule" />; otherwise, <c>false</c>.</returns>
-    public bool TryGetData(Type dataType, string key, [MaybeNullWhen(false)] out IKeyed data);
+    public bool TryGetData(Type type, string key, [MaybeNullWhen(false)] out IKeyed data);
 
     /// <summary>
     /// Attempts to add a data to the <see cref="IDataModule" />.
@@ -55,11 +55,11 @@ public interface IDataModule
     /// <summary>
     /// Attempts to remove a series of data that has the specified type from the <see cref="IDataModule" />.
     /// </summary>
-    /// <param name="dataType">The type of the data to remove.</param>
+    /// <param name="type">The type of the data to remove.</param>
     /// <returns>
     /// <c>true</c> if the data were removed from the <see cref="IDataModule" /> successfully; otherwise, <c>false</c>.
     /// </returns>
-    public bool TryRemove(Type dataType);
+    public bool TryRemove(Type type);
 
     /// <summary>
     /// Attempts to remove and return the data that has the specified key from the <see cref="IDataModule" />.
@@ -79,7 +79,7 @@ public interface IDataModule
     /// <summary>
     /// Attempts to remove and return the data that has the specified key from the <see cref="IDataModule" />.
     /// </summary>
-    /// <param name="dataType">The type of the data to remove and return.</param>
+    /// <param name="type">The type of the data to remove and return.</param>
     /// <param name="key">The key of the data to remove and return.</param>
     /// <param name="data">
     /// When this method returns, contains the data removed from the <see cref="IDataModule" /> that has the specified
@@ -88,7 +88,7 @@ public interface IDataModule
     /// <returns>
     /// <c>true</c> if the data was removed from the <see cref="IDataModule" /> successfully; otherwise, <c>false</c>.
     /// </returns>
-    public bool TryRemove(Type dataType, string key, [MaybeNullWhen(false)] out IKeyed data);
+    public bool TryRemove(Type type, string key, [MaybeNullWhen(false)] out IKeyed data);
 
     /// <summary>
     /// Clears all keys and data from the <see cref="IDataModule" />.
