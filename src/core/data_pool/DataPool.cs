@@ -11,15 +11,15 @@ internal sealed class DataPool
     private readonly ConcurrentDictionary<Type, DataContainer> _containers = [];
 
     /// <summary>
-    /// Attempts to get the data associated with the specified key from the <see cref="DataPool" />.
+    /// Attempts to get the data associated with the specified key from the data pool.
     /// </summary>
     /// <param name="type">The type of the data to get.</param>
     /// <param name="key">The key of the data to get.</param>
     /// <param name="data">
-    /// When this method returns, contains the data obtained from the <see cref="DataPool" /> that has the specified
-    /// key, or the default value of the <see cref="IKeyed" /> if the operation failed.
+    /// When this method returns, contains the data obtained from the data pool that has the specified key, or the
+    /// default value of the <see cref="IKeyed" /> if the operation failed.
     /// </param>
-    /// <returns><c>true</c> if the key was found in the <see cref="DataPool" />; otherwise, <c>false</c>.</returns>
+    /// <returns><c>true</c> if the key was found in the data pool; otherwise, <c>false</c>.</returns>
     internal bool TryGetData(Type type, string key, [MaybeNullWhen(false)] out IKeyed data)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -32,12 +32,11 @@ internal sealed class DataPool
     }
 
     /// <summary>
-    /// Attempts to add a data to the <see cref="DataPool" />.
+    /// Attempts to add a data to the data pool.
     /// </summary>
     /// <param name="data">The data to add.</param>
     /// <returns>
-    /// <c>true</c> if the data was added to the <see cref="DataPool" /> successfully; <c>false</c> if the data already
-    /// exists.
+    /// <c>true</c> if the data was added to the data pool successfully; <c>false</c> if the data already exists.
     /// </returns>
     internal bool TryAdd(IKeyed data)
     {
@@ -47,11 +46,11 @@ internal sealed class DataPool
     }
 
     /// <summary>
-    /// Attempts to remove a series of data that has the specified type from the <see cref="DataPool" />.
+    /// Attempts to remove a series of data that has the specified type from the data pool.
     /// </summary>
     /// <param name="type">The type of the data to remove.</param>
     /// <returns>
-    /// <c>true</c> if the data were removed from the <see cref="DataPool" /> successfully; otherwise, <c>false</c>.
+    /// <c>true</c> if the data were removed from the data pool successfully; otherwise, <c>false</c>.
     /// </returns>
     internal bool TryRemove(Type type)
     {
@@ -61,16 +60,16 @@ internal sealed class DataPool
     }
 
     /// <summary>
-    /// Attempts to remove and return the data that has the specified key from the <see cref="DataPool" />.
+    /// Attempts to remove and return the data that has the specified key from the data pool.
     /// </summary>
     /// <param name="type">The type of the data to remove and return.</param>
     /// <param name="key">The key of the data to remove and return.</param>
     /// <param name="data">
-    /// When this method returns, contains the data removed from the <see cref="DataPool" /> that has the specified
-    /// key, or the default value of the <see cref="IKeyed" /> if the operation failed.
+    /// When this method returns, contains the data removed from the data pool that has the specified key, or the
+    /// default value of the <see cref="IKeyed" /> if the operation failed.
     /// </param>
     /// <returns>
-    /// <c>true</c> if the data was removed from the <see cref="DataPool" /> successfully; otherwise, <c>false</c>.
+    /// <c>true</c> if the data was removed from the data pool successfully; otherwise, <c>false</c>.
     /// </returns>
     internal bool TryRemove(Type type, string key, [MaybeNullWhen(false)] out IKeyed data)
     {
@@ -84,7 +83,7 @@ internal sealed class DataPool
     }
 
     /// <summary>
-    /// Clears all keys and data from the <see cref="DataPool" />.
+    /// Clears all keys and data from the data pool.
     /// </summary>
     internal void Clear() => _containers.Clear();
 
@@ -96,40 +95,36 @@ internal sealed class DataPool
         private readonly ConcurrentDictionary<string, IKeyed> _data = [];
 
         /// <summary>
-        /// Attempts to get the data associated with the specified key from the <see cref="DataContainer" />.
+        /// Attempts to get the data associated with the specified key from the data container.
         /// </summary>
         /// <param name="key">The key of the data to get.</param>
         /// <param name="data">
-        /// When this method returns, contains the data obtained from the <see cref="DataContainer" /> that has the
-        /// specified key, or the default value of the <see cref="IKeyed" /> if the operation failed.
+        /// When this method returns, contains the data obtained from the data container that has the specified key, or
+        /// the default value of the <see cref="IKeyed" /> if the operation failed.
         /// </param>
-        /// <returns>
-        /// <c>true</c> if the key was found in the <see cref="DataContainer" />; otherwise, <c>false</c>.
-        /// </returns>
+        /// <returns><c>true</c> if the key was found in the data container; otherwise, <c>false</c>.</returns>
         internal bool TryGetData(string key, [MaybeNullWhen(false)] out IKeyed data) =>
             _data.TryGetValue(key, out data);
 
         /// <summary>
-        /// Attempts to add a data to the <see cref="DataContainer" />.
+        /// Attempts to add a data to the data container.
         /// </summary>
         /// <param name="data">The data to add.</param>
         /// <returns>
-        /// <c>true</c> if the data was added to the <see cref="DataContainer" /> successfully; <c>false</c> if the
-        /// data already exists.
+        /// <c>true</c> if the data was added to the data container successfully; otherwise, <c>false</c>.
         /// </returns>
         internal bool TryAdd(IKeyed data) => _data.TryAdd(data.Key, data);
 
         /// <summary>
-        /// Attempts to remove and return the data that has the specified key from the <see cref="DataContainer" />.
+        /// Attempts to remove and return the data that has the specified key from the data container.
         /// </summary>
         /// <param name="key">The key of the data to remove and return.</param>
         /// <param name="data">
-        /// When this method returns, contains the data removed from the <see cref="DataContainer" /> that has the
-        /// specified key, or the default value of the <see cref="IKeyed" /> if the operation failed.
+        /// When this method returns, contains the data removed from the data container that has the specified key, or
+        /// the default value of the <see cref="IKeyed" /> if the operation failed.
         /// </param>
         /// <returns>
-        /// <c>true</c> if the data was removed from the <see cref="DataContainer" /> successfully; otherwise,
-        /// <c>false</c>.
+        /// <c>true</c> if the data was removed from the data container successfully; otherwise, <c>false</c>.
         /// </returns>
         internal bool TryRemove(string key, [MaybeNullWhen(false)] out IKeyed data) => _data.TryRemove(key, out data);
     }
