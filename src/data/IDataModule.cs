@@ -33,7 +33,7 @@ public interface IDataModule
     public bool TryGetData(Type type, string key, [MaybeNullWhen(false)] out IKeyed data);
 
     /// <summary>
-    /// Attempts to add a data to the data module.
+    /// Attempts to add data to the data module.
     /// </summary>
     /// <param name="data">The data to add.</param>
     /// <returns><c>true</c> if the data was added to the data module successfully; otherwise, <c>false</c>.</returns>
