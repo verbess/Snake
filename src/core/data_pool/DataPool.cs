@@ -17,7 +17,7 @@ internal sealed class DataPool
     /// <param name="key">The key of the data to get.</param>
     /// <param name="data">
     /// When this method returns, contains the data obtained from the data pool that has the specified key, or the
-    /// default value of the <see cref="IKeyed" /> if the operation failed.
+    /// default value of the <see cref="IKeyed"/> if the operation failed.
     /// </param>
     /// <returns><c>true</c> if the key was found in the data pool; otherwise, <c>false</c>.</returns>
     internal bool TryGetData(Type type, string key, [MaybeNullWhen(false)] out IKeyed data)
@@ -32,7 +32,7 @@ internal sealed class DataPool
     }
 
     /// <summary>
-    /// Attempts to add a data to the data pool.
+    /// Attempts to add data to the data pool.
     /// </summary>
     /// <param name="data">The data to add.</param>
     /// <returns>
@@ -66,7 +66,7 @@ internal sealed class DataPool
     /// <param name="key">The key of the data to remove and return.</param>
     /// <param name="data">
     /// When this method returns, contains the data removed from the data pool that has the specified key, or the
-    /// default value of the <see cref="IKeyed" /> if the operation failed.
+    /// default value of the <see cref="IKeyed"/> if the operation failed.
     /// </param>
     /// <returns>
     /// <c>true</c> if the data was removed from the data pool successfully; otherwise, <c>false</c>.
@@ -100,7 +100,7 @@ internal sealed class DataPool
         /// <param name="key">The key of the data to get.</param>
         /// <param name="data">
         /// When this method returns, contains the data obtained from the data container that has the specified key, or
-        /// the default value of the <see cref="IKeyed" /> if the operation failed.
+        /// the default value of the <see cref="IKeyed"/> if the operation failed.
         /// </param>
         /// <returns><c>true</c> if the key was found in the data container; otherwise, <c>false</c>.</returns>
         internal bool TryGetData(string key, [MaybeNullWhen(false)] out IKeyed data) =>
@@ -121,7 +121,7 @@ internal sealed class DataPool
         /// <param name="key">The key of the data to remove and return.</param>
         /// <param name="data">
         /// When this method returns, contains the data removed from the data container that has the specified key, or
-        /// the default value of the <see cref="IKeyed" /> if the operation failed.
+        /// the default value of the <see cref="IKeyed"/> if the operation failed.
         /// </param>
         /// <returns>
         /// <c>true</c> if the data was removed from the data container successfully; otherwise, <c>false</c>.

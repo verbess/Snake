@@ -1,27 +1,27 @@
 namespace Snake;
 
 /// <summary>
-/// Serves as the base class for exceptions in the <see cref="Snake" /> namespace.
+/// Serves as the base class for exceptions in the <see cref="Snake"/> namespace.
 /// </summary>
 [Serializable]
 public class SnakeException : Exception
 {
     /// <summary>
-    /// Initializes a new instance of the this class.
+    /// Initializes a new instance of this class.
     /// </summary>
     public SnakeException()
         : base(Messages.Snake_Exception) { }
 
     /// <summary>
-    /// Initializes a new instance of the this class with a specified error message.
+    /// Initializes a new instance of this class with a specified error message.
     /// </summary>
     /// <param name="message">The message that describes the error.</param>
     public SnakeException(string? message)
         : base(message) { }
 
     /// <summary>
-    /// Initializes a new instance of the this class with a specified error message and a reference to the inner
-    /// exception that is the cause of this exception.
+    /// Initializes a new instance of this class with a specified error message and a reference to the inner exception
+    /// that is the cause of this exception.
     /// </summary>
     /// <param name="message">The error message that explains the reason for the exception.</param>
     /// <param name="innerException">
