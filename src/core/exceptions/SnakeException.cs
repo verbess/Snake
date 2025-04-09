@@ -1,7 +1,7 @@
 namespace Snake;
 
 /// <summary>
-/// Serves as the base class for exceptions in the <see cref="Snake" /> namespace.
+/// Serves as the base class for exceptions in the <see cref="Snake"/> namespace.
 /// </summary>
 [Serializable]
 public class SnakeException : Exception

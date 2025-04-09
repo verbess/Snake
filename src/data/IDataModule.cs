@@ -14,7 +14,7 @@ public interface IDataModule
     /// <param name="key">The key of the data to get.</param>
     /// <param name="data">
     /// When this method returns, contains the data obtained from the data module that has the specified key, or the
-    /// default value of the <typeparamref name="T" /> if the operation failed.
+    /// default value of the <typeparamref name="T"/> if the operation failed.
     /// </param>
     /// <returns><c>true</c> if the key was found in the data module; otherwise, <c>false</c>.</returns>
     public bool TryGetData<T>(string key, [MaybeNullWhen(false)] out T data)
@@ -27,7 +27,7 @@ public interface IDataModule
     /// <param name="key">The key of the data to get.</param>
     /// <param name="data">
     /// When this method returns, contains the data obtained from the data module that has the specified key, or the
-    /// default value of the <see cref="IKeyed" /> if the operation failed.
+    /// default value of the <see cref="IKeyed"/> if the operation failed.
     /// </param>
     /// <returns><c>true</c> if the key was found in the data module; otherwise, <c>false</c>.</returns>
     public bool TryGetData(Type type, string key, [MaybeNullWhen(false)] out IKeyed data);
@@ -65,7 +65,7 @@ public interface IDataModule
     /// <param name="key">The key of the data to remove and return.</param>
     /// <param name="data">
     /// When this method returns, contains the data removed from the data module that has the specified key, or the
-    /// default value of the <typeparamref name="T" /> if the operation failed.
+    /// default value of the <typeparamref name="T"/> if the operation failed.
     /// </param>
     /// <returns>
     /// <c>true</c> if the data was removed from the data module successfully; otherwise, <c>false</c>.
@@ -80,7 +80,7 @@ public interface IDataModule
     /// <param name="key">The key of the data to remove and return.</param>
     /// <param name="data">
     /// When this method returns, contains the data removed from the data module that has the specified key, or the
-    /// default value of the <see cref="IKeyed" /> if the operation failed.
+    /// default value of the <see cref="IKeyed"/> if the operation failed.
     /// </param>
     /// <returns>
     /// <c>true</c> if the data was removed from the data module successfully; otherwise, <c>false</c>.
