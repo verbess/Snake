@@ -8,6 +8,7 @@ namespace Snake;
 /// </summary>
 internal sealed class DataPool
 {
+    private static readonly Func<Type, DataContainer> s_containerFactory = _ => new DataContainer();
     private readonly ConcurrentDictionary<Type, DataContainer> _containers = [];
 
     /// <summary>
@@ -42,7 +43,7 @@ internal sealed class DataPool
     {
         ArgumentNullException.ThrowIfNull(data);
 
-        return _containers.GetOrAdd(data.GetType(), _ => new DataContainer()).TryAdd(data);
+        return _containers.GetOrAdd(data.GetType(), s_containerFactory).TryAdd(data);
     }
 
     /// <summary>
