@@ -11,5 +11,12 @@ indent_style = space
 indent_size = 4
 max_line_length = 120
 
+[*.sln]
+indent_style = tab
+
+[*.csproj]
+indent_style = space
+indent_size = 2
+
 [*.md]
 trim_trailing_whitespace = false
